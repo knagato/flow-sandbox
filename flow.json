@@ -1,0 +1,39 @@
+{
+	"emulators": {
+		"default": {
+			"port": 3569,
+			"serviceAccount": "emulator-account"
+		}
+	},
+	"contracts": {
+		"NonFungibleToken": "./cadence/contracts/NonFungibleToken.cdc",
+		"NFTDiary": "./cadence/contracts/NFTDiary.cdc"
+	},
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"testnet": "access.devnet.nodes.onflow.org:9000",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"keys": "6b24f011e41c0f721605c9e2d4b6e781e50d7bc52c8a6407209aedb112e3f916"
+		},
+		"account1": {
+			"address": "01cf0e2f2f715450",
+			"keys": "0d7f6d0208611e611ab01634ad7a1c7e661df770ea6fdf7b4a3866e5a786530b"
+		},
+    "testnetAccount1": {
+			"address": "5e78e3e6351ae6c1",
+			"keys": "cf0391194c3482993268592d2f1f7675ff498b797c95779f9461ef335556920f"
+		}
+	},
+	"deployments": {
+		"emulator": {
+			"emulator-account": ["NonFungibleToken", "NFTDiary"]
+		},
+    "testnet": {
+			"testnetAccount1": ["NFTDiary"]
+		}
+	}
+}
